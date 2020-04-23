@@ -3,16 +3,21 @@ import React, { useState } from "react";
 function App() {
   //State outputs an array [initial state, =>]
   // could use destructing to assign a name to array values
-  const [count, setCount] = useState(90);
+  const [count, setCount] = useState(0);
 
   function increase() {
-    setCount(10);
+    setCount(count + 1);
+  }
+
+  function decrease() {
+    setCount(count - 1);
   }
 
   return (
     <div className="container">
       <h1>{count}</h1>
       <button onClick={increase}>+</button>
+      <button onClick={decrease}>-</button>
     </div>
   );
 }
